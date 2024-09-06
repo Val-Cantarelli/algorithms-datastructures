@@ -36,6 +36,7 @@ public class QuickFindUF {
             int p = scanner.nextInt();
             int q = scanner.nextInt();
             if (!uf.connectedUF(p,q)) {
+
                 uf.union(p,q);
                 System.out.println(p + "-" + q + " : "+  uf.getAccessCount() + "times");
             }
