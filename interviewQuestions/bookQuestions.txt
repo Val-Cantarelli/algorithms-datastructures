@@ -1,0 +1,10 @@
+Book Question 1.5.5 (open-ended)
+Estimate the minimum amount of time (in days) that would be required for quick-find to solve
+a dynamic connectivity problem with 10^9 sites and 10^6 input pairs, on a computer capable
+of executing 10^9 instructions per second. Assume that each iteration of the inner for loop
+requires 10 machine instructions.
+
+Total = input pairs x N (sites) x 10(machine instructions) / CPU(10⁹)
+
+Total = 10⁶ * (10⁹ * 10) / 10⁹ = 10⁷/ 60 * 60 * 24
+Toal = 115 days
