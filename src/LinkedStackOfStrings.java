@@ -1,3 +1,5 @@
+
+
 public class LinkedStackOfStrings {
 
     private Node first;
