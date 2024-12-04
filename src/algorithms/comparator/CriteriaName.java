@@ -1,7 +1,7 @@
-package comparator;
+package algorithms.comparator;
 
 import java.util.Comparator;
-import val.base.Person;
+import algorithms.base.Person;
 
 public class CriteriaName implements Comparator<Person> {
 
