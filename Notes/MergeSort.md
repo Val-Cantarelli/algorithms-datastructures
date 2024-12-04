@@ -8,7 +8,7 @@ and then reassemble them, resulting in a sorted array.
 
 ## How is it?
 "Sort" to order and "Merge" to combine. As for implementation, we have two options: top-down and bottom-up. 
-They do the same thing but differ in some details.
+They do the same thing but differ in some details:
 
 
 ### Top-Down (recursive)
