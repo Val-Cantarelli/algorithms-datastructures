@@ -29,7 +29,7 @@ E eu só tenho que comparar se são o mesmo root. Se não são apenas aponto um 
 
 </h2>
 <h1>Improvements:</h1>
- <h2>1. Pesos(see code: WeightedQU.java)
+ <h2>1. Pesos(see code: algorithms.WeightedQU.java)
 
  - Evitar árvores altas e magras;
  - keep track of size of each tree;

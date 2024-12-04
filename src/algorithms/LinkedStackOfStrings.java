@@ -1,4 +1,6 @@
+package algorithms;
 
+import edu.princeton.cs.algs4.StdIn;
 
 public class LinkedStackOfStrings {
 
