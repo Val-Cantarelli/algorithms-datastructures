@@ -1,3 +1,5 @@
+package algorithms;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -15,7 +17,7 @@ public class QuickFindUF {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("QuickFindUF{");
+        sb.append("val.QuickFindUF{");
         for (int i = 0; i < id.length; i++) {
             sb.append(i).append(": ").append(id[i]).append(", ");
         }

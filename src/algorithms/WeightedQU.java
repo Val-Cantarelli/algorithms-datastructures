@@ -1,10 +1,12 @@
+package algorithms;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class WeightedQU {
     /**
-     This class is similar to the QuickUnionUF, but with weight
+     This class is similar to the val.QuickUnionUF, but with weight
      system applied to make sure the tree will not be tall and skinny
 
      Modifications:

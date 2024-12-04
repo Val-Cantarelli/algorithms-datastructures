@@ -1,3 +1,8 @@
+package algorithms;
+
+import edu.princeton.cs.algs4.Stack;
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -11,11 +16,11 @@ import java.util.NoSuchElementException;
 *
 * GENERICS:
 * Use of Generics: <Item> and you just will set the type of data when you create the instance:
-* "QueueLinkedList<Integer> queueLinkedList = new QueueLinkedList<>();"
+* "val.QueueLinkedList<Integer> queueLinkedList = new val.QueueLinkedList<>();"
 *
 * */
 
-// "implements Iterable<Item>": faz QueueLinkedList iterável para o cliente usar
+// "implements Iterable<Item>": faz val.QueueLinkedList iterável para o cliente usar
 // sem a necessidade de conhecer a implementacão da minha queue.
 public class QueueLinkedList<Item> implements Iterable<Item> {
 
