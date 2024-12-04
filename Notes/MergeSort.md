@@ -2,13 +2,10 @@
 
 ## What is it?
 
-Frequently, we need to sort and organize data. MergeSort is an algorithm that does this using a 
-"divide and conquer" approach. For example, if we have an array, it will divide it into smaller arrays, sort them, 
-and then reassemble them, resulting in a sorted array.
+Frequently, we need to sort and organize data. MergeSort is an algorithm that does this using a "divide and conquer" approach. For example, if we have an array, it will divide it into smaller arrays, sort them, and then reassemble them, resulting in a sorted array.
 
 ## How is it?
-"Sort" to order and "Merge" to combine. As for implementation, we have two options: top-down and bottom-up. 
-They do the same thing but differ in some details:
+"Sort" to order and "Merge" to combine. As for implementation, we have two options: top-down and bottom-up. They do the same thing but differ in some details:
 
 
 ### Top-Down (recursive)
