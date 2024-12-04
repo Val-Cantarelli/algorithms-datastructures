@@ -1,3 +1,7 @@
+package algorithms;
+
+import edu.princeton.cs.algs4.StdIn;
+
 public class StackOfStrings {
     private String[] items; // stack items
     private int n = 0; // number of items

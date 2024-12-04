@@ -1,7 +1,7 @@
-package val.base;
+package algorithms.base;
 
-import comparator.CriteriaAge;
-import comparator.CriteriaName;
+import algorithms.comparator.CriteriaAge;
+import algorithms.comparator.CriteriaName;
 import java.util.*;
 
 public class Person implements Comparable<Person>{
