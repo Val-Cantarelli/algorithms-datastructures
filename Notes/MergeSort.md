@@ -101,7 +101,7 @@ The relationship  gives us useful information:
 - at least one leaf for each possible ordering;
 
 ![img_17.png](img_17.png)
-$$N \log N < \text{leaves} < 2^h$$
+$N \log N < \text{leaves} < 2^h$
   
 
 
