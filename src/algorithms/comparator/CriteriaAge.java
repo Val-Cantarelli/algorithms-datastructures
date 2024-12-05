@@ -1,5 +1,4 @@
 package algorithms.comparator;
-
 import java.util.Comparator;
 import algorithms.base.Person;
 
