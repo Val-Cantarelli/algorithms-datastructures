@@ -1,10 +1,17 @@
 # MergeSort
 
-## What is it?
+
+Brief approach on the theoretical limits of the efficiency of sorting algorithms based on comparisons, 
+using mergesort as an example to illustrate fundamental concepts of computational complexity.
+
+**Overall goal:** Determine the upper and lower bounds for the number of comparisons needed to sort N 
+elements and prove that mergesort is an optimal algorithm in this context.
+
+## MergeSort
 
 Frequently, we need to sort and organize data. MergeSort is an algorithm that does this using a 
-"divide and conquer" approach. For example, if we have an array, it will divide it into smaller arrays, sort them, 
-and then reassemble them, resulting in a sorted array.
+"divide and conquer" approach. For example, if we have an array, it will divide it into smaller arrays, 
+sort them, and then reassemble them, resulting in a sorted array.
 
 ## How is it?
 "Sort" to order and "Merge" to combine. As for implementation, we have two options: top-down and bottom-up. 
@@ -15,10 +22,10 @@ They do the same thing but differ in some details:
 
 Time complexity is driven by the recursive splitting and merging process. At each level of recursion, you split the 
 array in half, which results in a height of 𝑁 log N levels, and each level requires 𝑂(𝑁) work to merge the 
-sub-rrays. This gives the total complexity of 𝑂(𝑁 log 𝑁).
+sub-rrays. This gives the total complexity of 𝑂(𝑁 lg 𝑁).
 
 - The array is recursively divided in half until only 1 element remains;
-- Then, it backtracks, sorting and grouping the subarrays into sizes of 2, 4, 6, 8...;
+- Then, it backtracks, sorting and grouping the subarrays into sizes of 2, 4, 8...;
 - Finally, we end up with a sorted array.
 
 #### Example:
@@ -48,7 +55,7 @@ array = [38, 27, 43, 3, 9, 82, 10]
 ### Bottom-Up (iteratively)
 
 Time complexity is similar because it still involves merging at each level, but here the merging is done 
-iteratively. The process is still O(NlogN) because the merging stages are similar to the recursive approach.
+iteratively. The process is still O(N lg N) because the merging stages are similar to the recursive approach.
 
 - The array is initially treated as individual elements (size 1);
 - Sub-arrays of size 2, 4, 8, etc., are gradually merged until the entire array is sorted;
@@ -86,7 +93,7 @@ array = [38, 27, 43, 3, 9, 82, 10]
 
 Computational complexity is a framework that helps us understand the efficiency of algorithms. It includes:
 
-- **Upper Bound**: The maximum guaranteed cost of an algorithm (e.g., MergeSort has a cost proportional to \(N \log N\)).
+- **Upper Bound**: The maximum guaranteed cost of an algorithm (e.g., MergeSort has a cost proportional to N lg N).
 
 - **Lower Bound**: The minimum cost required for any algorithm to solve the problem (i.e., when there is no 
 better algorithm).
@@ -98,12 +105,18 @@ For sorting, we can use a **Decision Tree** as a model, where:
 The relationship  gives us useful information:
 
 - height of tree = worst-case number of compares;
-- at least one leaf for each possible ordering;
+- at least one leaf for each possible ordering, at least N! leaves
+
 
 ![img_17.png](img_17.png)
-$N \log N < \text{leaves} < 2^h$
-  
 
+$N \lg N < \text{leaves} < 2^h$
+
+
+
+MergeSort is considered optimal in terms of required comparisons because it reaches the theoretical upper and 
+lower limits 𝑁 lg 𝑁 for comparison-based algorithms. However, optimality depends on the criterion being 
+analyzed, and for memory, for example, it is not the most efficient.
 
 ## Trade-off
 
@@ -123,6 +136,16 @@ in *non-local memory access*, meaning elements are often accessed in a scattered
 in memory. This contradicts the concept of caching, which relies on accessing data that is physically 
 close to the CPU to optimize performance.
 
+# to do: programming a parallelized mergesort
 
-## comparaćão com outros algorithmos
+Under which of the following scenarios does the N lg N lower bound for sorting apply? Assume that the 
+keys are accessed only through the compareTo() method unless otherwise specified.
 
+
+1. five distinct keys
+2. no two keys are equal
+
+ *A: There will be fewer comparisons, so the lower bound should be affected.*
+
+3. keys are strings and accessed via charAt() instead of compareTo()
+4. keys in descending order *True. Does not matter the order, since they are distinct*
