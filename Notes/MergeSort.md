@@ -136,16 +136,5 @@ in *non-local memory access*, meaning elements are often accessed in a scattered
 in memory. This contradicts the concept of caching, which relies on accessing data that is physically 
 close to the CPU to optimize performance.
 
+
 # to do: programming a parallelized mergesort
-
-Under which of the following scenarios does the N lg N lower bound for sorting apply? Assume that the 
-keys are accessed only through the compareTo() method unless otherwise specified.
-
-
-1. five distinct keys
-2. no two keys are equal
-
- *A: There will be fewer comparisons, so the lower bound should be affected.*
-
-3. keys are strings and accessed via charAt() instead of compareTo()
-4. keys in descending order *True. Does not matter the order, since they are distinct*
