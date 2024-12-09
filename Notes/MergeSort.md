@@ -7,8 +7,6 @@ using mergesort as an example to illustrate fundamental concepts of computationa
 **Overall goal:** Determine the upper and lower bounds for the number of comparisons needed to sort N 
 elements and prove that mergesort is an optimal algorithm in this context.
 
-## MergeSort
-
 Frequently, we need to sort and organize data. MergeSort is an algorithm that does this using a 
 "divide and conquer" approach. For example, if we have an array, it will divide it into smaller arrays, 
 sort them, and then reassemble them, resulting in a sorted array.
@@ -113,7 +111,6 @@ The relationship  gives us useful information:
 $N \lg N < \text{leaves} < 2^h$
 
 
-
 MergeSort is considered optimal in terms of required comparisons because it reaches the theoretical upper and 
 lower limits 𝑁 lg 𝑁 for comparison-based algorithms. However, optimality depends on the criterion being 
 analyzed, and for memory, for example, it is not the most efficient.
@@ -123,7 +120,13 @@ analyzed, and for memory, for example, it is not the most efficient.
 Advantages:
 
 - Guaranteed time complexity: N lg N in all cases(worst,best and average);
-- because of the divide and conquer it's easy to parallelize;
+- parallelize: because of the divide and conquer it's easy to parallelize;
+- stability: if you want to apply MergeSort twice(first by name and after by age, e.g.) the 
+MergeSort won't change the order which already exists in the elements of the same key. 
+This, because, when we have left and right elements equals we ALWAYS copy first all the items from
+left in that order(pay attention to the code you write); Think about Selection Sort:
+
+[B1, B2, A] results in [A,B2,B1]: that is, it has changed an order that was already correct B1 and B2
 
 Disadvantages:
  
