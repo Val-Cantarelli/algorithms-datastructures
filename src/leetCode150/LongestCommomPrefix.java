@@ -13,7 +13,7 @@ public class LongestCommomPrefix {
         String prefix = words[0];
         for (int i = 1; i < words.length; i++) {
             int j = 0;
-            while( j < prefix.length() && j< words[i].length() && prefix.charAt(j) == words[i].charAt(j)) {
+            while( j < prefix.length() && j < words[i].length() && prefix.charAt(j) == words[i].charAt(j)) {
                 j++;
             }
             prefix = prefix.substring(0,j);
