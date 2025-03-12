@@ -1,5 +1,6 @@
 package leetCode150;
-/*Given an array of integers nums and an integer target, return indices of the two numbers
+/*EASY
+Given an array of integers nums and an integer target, return indices of the two numbers
 such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not
@@ -25,7 +26,7 @@ public class TwoSum {
             map.put(number,i);
         }
 
-        return new int[0]; // The problem guarantee a solution
+        return new int[0]; // The problem guarantees a solution
     }
 
     public static void main(String[] args) {
