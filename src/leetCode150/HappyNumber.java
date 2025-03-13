@@ -44,7 +44,7 @@ public class HappyNumber {
         return  true;
     }
     public static void main(String[] args) {
-        int n = 235;
+        int n = 1;
         System.out.println(isHappy(n));
     }
 }
