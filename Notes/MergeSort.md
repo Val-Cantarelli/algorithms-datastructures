@@ -8,8 +8,8 @@ using mergesort as an example to illustrate fundamental concepts of computationa
 elements and prove that mergesort is an optimal algorithm in this context.
 
 Frequently, we need to sort and organize data. MergeSort is an algorithm that does this using a 
-"divide and conquer" approach. For example, if we have an array, it will divide it into smaller arrays, 
-sort them, and then reassemble them, resulting in a sorted array.
+"divide and conquer" approach. For example, if we have an array, it will recursively divide it into smaller arrays, 
+sort them, and then reassemble, resulting in a sorted array.
 
 ## How is it?
 "Sort" to order and "Merge" to combine. As for implementation, we have two options: top-down and bottom-up. 
@@ -22,8 +22,8 @@ Time complexity is driven by the recursive splitting and merging process. At eac
 array in half, which results in a height of 𝑁 log N levels, and each level requires 𝑂(𝑁) work to merge the 
 sub-rrays. This gives the total complexity of 𝑂(𝑁 lg 𝑁).
 
-- The array is recursively divided in half until only 1 element remains;
-- Then, it backtracks, sorting and grouping the subarrays into sizes of 2, 4, 8...;
+- The array is recursively divided into 2 halves until only 1 element remains;
+- Then, it backtracks, sorting and merging the 2 halves;
 - Finally, we end up with a sorted array.
 
 #### Example:
