@@ -1,5 +1,5 @@
 package algorithms.recursion;
-
+// Wrong - fix it!! Double it is not accepted. Manipulate the print
 public class Pow {
     public static int pow(int a, int n){
         if(a == 0 || n == 0) return  0;
@@ -7,8 +7,9 @@ public class Pow {
         if(n < 0){
             int numerator = 1;
             int denominator = pow(a, -n);
-            System.out.println("Result: " + numerator + "/" + denominator);
+            //System.out.println("Result: " + numerator + "/" + denominator);
         }
+
         return pow(a, n-1) * a;
     }
 
