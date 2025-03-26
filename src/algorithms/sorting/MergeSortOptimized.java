@@ -48,9 +48,6 @@ public class MergeSortOptimized {
             arr[k--] = arr[i--];
         }
 
-        while (j >= 0) {
-            arr[k--] = aux[j--];
-        }
     }
     public static void main(String[] args) {
         int[] array = {38, 27, 43, 3,3};
