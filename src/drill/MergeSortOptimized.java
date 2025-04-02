@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package drill;
 import java.util.Arrays;
 /*
 MergeSort classic optimization:
