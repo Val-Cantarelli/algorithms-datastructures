@@ -21,6 +21,5 @@ public class InvertBinaryTreeTest {
         assertEquals(2, inverted.val);
         assertEquals(3, inverted.left.val);
         assertEquals(1, inverted.right.val);
-
     }
 }

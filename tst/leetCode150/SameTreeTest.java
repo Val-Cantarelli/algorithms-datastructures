@@ -46,7 +46,7 @@ public class SameTreeTest {
         node1.left = node2;
 
         TreeNode nodeA = new TreeNode(1);
-        nodeA.right = node2; // Different structure
+        nodeA.right = node2;
 
         assertFalse(isSameTree(node1, nodeA), "The trees should have different structures.");
     }

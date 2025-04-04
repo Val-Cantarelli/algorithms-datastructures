@@ -19,7 +19,7 @@ public class MaxDepthTreeTest {
         node3.right = node5;
 
         int result = MaxDepthTree.maxDepthTree(node1);
-        assertEquals(3, result); // altura máxima esperada
+        assertEquals(3, result);
     }
 
     @Test
