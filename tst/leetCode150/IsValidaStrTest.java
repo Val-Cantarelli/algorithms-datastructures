@@ -32,7 +32,7 @@ public class IsValidaStrTest {
 
     @Test
     public void testEmptyString() {
-        assertTrue(test.isValid("")); // depende do enunciado, mas normalmente uma string vazia é considerada "válida"
+        assertTrue(test.isValid(""));
     }
 
     @Test
