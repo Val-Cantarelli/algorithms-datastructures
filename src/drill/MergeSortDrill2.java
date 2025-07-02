@@ -23,7 +23,6 @@ public class MergeSortDrill2 {
 
     private static void merge(int[] array, int start, int middle, int end) {
         // Criar o vetor aux com a parte direita do array
-        //Percorrer array de tras para frente
         int [] aux = new int[end-middle];
         System.arraycopy(array,middle+1,aux,0,aux.length);
         int i = middle;
