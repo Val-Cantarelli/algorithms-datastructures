@@ -41,8 +41,6 @@ public class AveregeLevelTree {
                 sum = 0;
             }
         }
-
         return result;
-
     }
 }
