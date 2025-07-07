@@ -1,11 +1,9 @@
 package algorithms.trees;
-
-import com.sun.source.tree.Tree;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-/*Given a tupla of parent:child, answer if it is a binary tree */
+/*Given a tupla of pair "parent:child", answer if it is a binary tree */
 public class TreeChecker {
 
     /*
@@ -27,7 +25,7 @@ public class TreeChecker {
      */
 
     // TReeNode definition and methods
-    public class TreeNode{
+    public static class TreeNode{
         private TreeNode root;
         private int val;
         private TreeNode left;
@@ -63,38 +61,39 @@ public class TreeChecker {
         }
    }
 
-        // vai receber uma tupla, criar arvores e por fim repassar cada nó para saber se compartilham a mesma root
-        private boolean isConeccted(int [][] tupla){
 
-            Map<Integer, TreeNode> nodeMap = new HashMap<>();
-
-            for (int i = 0; i < tupla.length; i++) {
-                TreeNode parentNode = recover(nodeMap, tupla[i][0]);
-                TreeNode childNode = recover(nodeMap, tupla[i][1]);
-                // get nos valores
-
-                if(!parentNode.add(childNode)){
-                    return false;
-                }
-            }
-            // Terminado de add nodes, confere se todos nodes compartilham mesma root
-            Optional<TreeNode> first = nodeMap.values().stream().findFirst();
-            if(first.isEmpty()) return true;
-            TreeNode rootCandidate = first.get().findRoot();
-
-            for (TreeNode node: nodeMap.values()){
-                if(node.findRoot() != rootCandidate) return false;
-            }
-            return true;
-        }
-
-    private TreeNode recover(Map<Integer, TreeNode> nodeMap, int i) {
+    private static TreeNode recover(Map<Integer, TreeNode> nodeMap, int i) {
         TreeNode result = nodeMap.get(i);
         if (result == null){
             result = new TreeNode(i);
             nodeMap.put(i, result);
         }
         return result;
+    }
+
+    // vai receber uma tupla, criar arvores e por fim repassar cada nó para saber se compartilham a mesma root
+    private static boolean isConnected(int[][] tupleArray) {
+        Map<Integer, TreeNode> nodeMap = new HashMap<>();
+
+        for (int i = 0; i < tupleArray.length; i++) {
+            // get nos valores
+            TreeNode parentNode = recover(nodeMap, tupleArray[i][0]);
+            TreeNode childNode = recover(nodeMap, tupleArray[i][1]);
+
+            if(!parentNode.add(childNode)){
+                return false;
+            }
+        }
+
+        // Terminado de add nodes, confere se todos nodes compartilham mesma root
+        Optional<TreeNode> first = nodeMap.values().stream().findFirst();
+        if(first.isEmpty()) return true;
+        TreeNode rootCandidate = first.get().findRoot();
+
+        for (TreeNode node: nodeMap.values()){
+            if(node.findRoot() != rootCandidate) return false;
+        }
+        return true;
     }
 
     public static void main(String[] args) {
@@ -110,9 +109,6 @@ public class TreeChecker {
 
         boolean answer = TreeChecker.isConnected(tupleArray);
         System.out.println(answer);
-
-
     }
-
 }
 
