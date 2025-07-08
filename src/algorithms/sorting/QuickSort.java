@@ -1,18 +1,19 @@
 package algorithms.sorting;
 
 public class QuickSort {
-    // Divide the array into two parts (logically, not physically).
-    // Select a pivot and place it in the first position.
-    // Use two pointers, i and j, i++ e j--.
-    // While arr[i] is less than pivot, increment i.
-    // While arr[j] is greater than pivot, decrement j.
-    // When you have arr[i] > pivot and arr[j] < pivot, swap arr[i] and arr[j].
+     /* Divide the array into two parts (logically, not physically).
+     Select a pivot and place it in the first position.
+     Use two pointers, i and j, i++ e j--.
+     While arr[i] is less than pivot, increment i.
+     While arr[j] is greater than pivot, decrement j.
+     When you have arr[i] > pivot and arr[j] < pivot, swap arr[i] and arr[j].
 
-    // Remember: i and j should cross over. Once they do, j will be in the correct position to place the pivot (arr[lo]).
-    // Swap arr[lo] with arr[j] to finalize the pivot's position.
-    // Now, apply the same logic recursively to the left and right subarrays.
-    // Left: from 0 to j.
-    // Right: from j + 1 to arr.length - 1.
+     Remember: i and j should cross over. Once they do, j will be in the correct position to place the pivot (arr[lo]).
+     Swap arr[lo] with arr[j] to finalize the pivot's position.
+     Now, apply the same logic recursively to the left and right subarrays.
+     Left: from 0 to j.
+     Right: from j + 1 to arr.length - 1.
+     */
 
     public static void quickSort(int[] arr) {
         quickSort(arr, 0, arr.length - 1);

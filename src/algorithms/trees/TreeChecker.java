@@ -26,6 +26,7 @@ public class TreeChecker {
 
     // TReeNode definition and methods
     public static class TreeNode{
+
         private TreeNode root;
         private int val;
         private TreeNode left;
