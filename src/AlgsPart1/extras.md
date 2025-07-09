@@ -33,6 +33,8 @@ A comparison of the implementations, characteristics, and performance of `HashMa
 
 > If you remove all elements one by one, you'll get them in order — but the heap does not maintain total visible ordering.
 
+
+
 ---
 
 ## 3. TreeMap

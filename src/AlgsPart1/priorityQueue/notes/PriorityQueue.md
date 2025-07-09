@@ -130,6 +130,15 @@ public Key delMax() {
 }
 ```
 
+
+> - Use immutable keys;
+> - Exception if tries to remove from an empty pq;
+> - Do not expose the capability to the client: PrioriteQueue has a fixed and e extensible pq;
+> - Default: pq it will be natural order. Otherwise, the client needs to specify 
+> reserve order on the comparator: 
+> 
+> PriorityQueue<Integer> maxPq = new PriorityQueue<>(Comparator.reverseOrder());
+
 ---
 
 Try it here: https://www.cs.usfca.edu/~galles/visualization/Heap.html
