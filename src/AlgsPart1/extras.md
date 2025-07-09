@@ -6,7 +6,7 @@ A comparison of the implementations, characteristics, and performance of `HashMa
 
 ## 1. HashMap
 
-- **Implements:** `Map`
+- **Implements:** `Map` - internally uses an array
 - **Stores:** key → value pairs
 - **Ordering:** Not ordered
 - **How it works:**
@@ -20,7 +20,7 @@ A comparison of the implementations, characteristics, and performance of `HashMa
 
 ## 2. Binary Heap (`PriorityQueue`)
 
-- **Implements:** `PriorityQueue`
+- **Implements:** `PriorityQueue`- internally uses an array
 - **Stores:** values only (no key)
 - **Ordering:** Partial — only the root has guaranteed priority
 - **How it works:**
@@ -37,7 +37,7 @@ A comparison of the implementations, characteristics, and performance of `HashMa
 
 ## 3. TreeMap
 
-- **Implements:** `Map`, `NavigableMap`
+- **Implements:** `Map`, `NavigableMap` - internally uses object
 - **Stores:** key → value pairs
 - **Ordering:** Fully ordered by keys (natural order or custom comparator)
 - **How it works:**

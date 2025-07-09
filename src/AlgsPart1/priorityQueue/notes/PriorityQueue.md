@@ -82,7 +82,6 @@ with the highest priority" – the priority will be defined in the implementatio
 ### Adding elements:
 
 When I add an element, I do it at the **end of the queue** and use `swim` to rearrange the tree – if needed.
-![img.png](img.png)
 
 
 
