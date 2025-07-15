@@ -4,15 +4,6 @@ Master the internal mechanics of both languages, their standard libraries, advan
 
 ---
 
-## Weekly Structure
-
-Mon–Thu: Theory + Practice  
-Fri: Complementary Reading  
-Sat: Review + Notes  
-Sun: Mini Challenge
-
----
-
 ## Week 1 — Deep OOP
 - Concepts: Inheritance, composition, polymorphism, encapsulation
 - Java: abstract, interface, final, nested classes
