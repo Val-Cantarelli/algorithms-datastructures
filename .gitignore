@@ -4,10 +4,6 @@ out/
 !**/src/test/**/out/
 .idea/
 
-resource
-
-tst
-
 lib
-
 .DS_Store
+algorithms.iml
