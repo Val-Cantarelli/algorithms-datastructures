@@ -13,10 +13,15 @@ public class Dir extends DirFile{
         super(aName);
     }
 
+
     @Override
     public int size() {
         if ( currentSize== null)
             currentSize = list.stream().mapToInt(dirFile -> dirFile.size()).sum();
         return  currentSize;
     }
+    public void add(DirFile dirFile) {
+        list.add(dirFile);
+    }
+
 }
