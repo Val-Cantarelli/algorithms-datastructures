@@ -3,33 +3,44 @@ package adventsCode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Stack;
+
+/* Incremental solution:
+ * The initial idea was to use a tree, but it would be cumbersome to retrieve and update a node.
+ * We then considered a map-based solution to quickly retrieve all the children of a node.
+ * However, this would require multiple maps. To simplify, we implemented it with a single
+ * map, using the concept of a **path** for fast retrieval of the directory for updates.
+ */
+
+
 
 public class Day72022 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // abre leitura
+        Dir rootDir= new Dir("/");
+        Stack<String> currentPath = new Stack<>();// declara a pilha do path vazia
+        Map<String, Dir> content = new HashMap<>();
+        Dir currentDir = null;
+        content.put("/", rootDir);
 
         while (scanner.hasNextLine()) {
             String line = scanner.nextLine();
-            Map<String, Dir> content = new HashMap<>();
-            String [] lineS = line.split("");
+            String [] lineS = line.split(" ");
 
-            if (lineS[1] == "cd"){
-                //  faz alguma coisa
-                // adiciona no path
-                // ai continua lendo...
+            if (lineS[1].equals("cd")){
+                currentPath.add(lineS[2]);
+                currentDir = content.get(currentPath.toString());
+                // ..
             }
+            if (lineS[0].equals("dir")){
 
-            if (lineS[1] == "ls"){
-                line = scanner.nextLine();
-                while(true){
+                Dir dir = new Dir(lineS[1]);
+                currentDir.list.add(dir);
+                currentPath.add(lineS[1]);
+                content.put(String.valueOf(currentPath),dir);
 
-                }
-                // le linha de baixo
-                // se a linha de baixo for um commando... para
-                // senao
-                // se arquivo... cria arquivo
-                // se diretorio cria diretorio
             }
+            // if file: cria file e adiciona no currentDir
 
             System.out.println(
                     content.values().stream()
