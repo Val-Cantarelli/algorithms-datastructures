@@ -48,7 +48,7 @@ array = [38, 27, 43, 3, 9, 82, 10]
 
 **Trace of results:**
 
-![img_15.png](img_15.png)
+![img_15.png](PriorityQueue/img_15.png)
 
 ### Bottom-Up (iteratively)
 
@@ -84,7 +84,7 @@ array = [38, 27, 43, 3, 9, 82, 10]
 **Trace of results:**
 
 
-![img_16.png](img_16.png)
+![img_16.png](PriorityQueue/img_16.png)
 
 
 ## Sorting Computational Complexity
@@ -106,7 +106,7 @@ The relationship  gives us useful information:
 - at least one leaf for each possible ordering, at least N! leaves
 
 
-![img_17.png](img_17.png)
+![img_17.png](PriorityQueue/img_17.png)
 
 $N \lg N < \text{leaves} < 2^h$
 

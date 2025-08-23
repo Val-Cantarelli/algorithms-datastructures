@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.unionfind;
 
 import java.io.File;
 import java.io.FileNotFoundException;

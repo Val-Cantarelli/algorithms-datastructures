@@ -2,88 +2,107 @@ package algorithms;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.Scanner;
+/**
+ * Weighted Quick-Union with dynamic growth (resizing array) + path compression.
+ */
 
 public class WeightedQU {
-    /**
-     This class is similar to the val.QuickUnionUF, but with weight
-     system applied to make sure the tree will not be tall and skinny
 
-     Modifications:
-     - Link root of smaller tree to root a larger tree;
-     -  Update the sz[] array.
-     - Path compression
+    private int[] id;        // parent links
+    private int[] sz;        // size by root
+    private int size;        // valid nodes (0..size-1)
+    private int capacity;    // id.length == sz.length
 
-     */
-    private final int[] id;
-    private final int[] sz;
-
-    public WeightedQU(int N){
-        id = new int[N];
-        this.sz = new int[N];
-        for (int i = 0; i < N; i++) {
-            id[i] =i;
+    public WeightedQU(int initialCapacity) {
+        capacity = Math.max(1, initialCapacity);
+        id = new int[capacity];
+        sz = new int[capacity];
+        size = capacity;
+        for (int i = 0; i < size; i++) {
+            id[i] = i;
             sz[i] = 1;
         }
     }
-    private  int root(int p){
-        int root = p;
-        // Find the root of p
-        while (root != id[root])root = id[root];
 
-        // Total compression: all the nodes on the path of p, will point to the root
-        while (p != root){
-            int newp = id[p];
-            id[p] = root;
-            p = newp;
+    // Grows the structure (capacity and nodes) to include the index idx, in ONE pass.
+    public void growToInclude(int idx) {
+        if (idx < size) return;
+
+        // 1) ensure exponential capacity is sufficient
+        int newCap = capacity;
+        while (newCap <= idx) newCap *= 2;
+        if (newCap != capacity) {
+            id = Arrays.copyOf(id, newCap);
+            sz = Arrays.copyOf(sz, newCap);
+            capacity = newCap;
         }
-        return root;
+
+        // 2) initialize all new nodes [size..idx]
+        for (int i = size; i <= idx; i++) {
+            id[i] = i;   // starts as root
+            sz[i] = 1;
+        }
+        size = idx + 1;
     }
 
-
-
-//    private int root(int p){
-//        if (id[p] != p) {
-//            int root = root(id[p]);
-//            id[p] = root;
-//        }
-//        return id[p];
-//    }
-
-    public boolean connected(int p,int q){
-        return root(p)==root(q);
+    // Optional API: create only 1 site (kept for compatibility)
+    public int newSite() {
+        growToInclude(size);
+        return size - 1;
     }
 
-    public void union(int p,int q){
-        int i= root(p);
-        int j = root(q);
-        if (sz[i]<sz[j]){id[i] = j;sz[j]+=sz[i];}
-        else{id[j] = i;sz[i]+=sz[j]; }
+    private int root(int p) {
+        int r = p;
+        while (r != id[r]) r = id[r];
+        // full path compression from p to r
+        while (p != r) {
+            int np = id[p];
+            id[p] = r;
+            p = np;
+        }
+        return r;
     }
+
+    public boolean connected(int p, int q) {
+        return root(p) == root(q);
+    }
+
+    public void union(int p, int q) {
+        int i = root(p), j = root(q);
+        if (i == j) return;
+        if (sz[i] < sz[j]) { id[i] = j; sz[j] += sz[i]; }
+        else               { id[j] = i; sz[i] += sz[j]; }
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        for (int i = 0; i < id.length; i++) {
-            sb.append(i).append(": ").append(id[i]).append(", ");
-        }
-        if (id.length > 0) {
-            sb.setLength(sb.length() - 2);
+        StringBuilder sb = new StringBuilder("{");
+        for (int i = 0; i < size; i++) {
+            sb.append(i).append(": ").append(id[i]);
+            if (i + 1 < size) sb.append(", ");
         }
         sb.append('}');
         return sb.toString();
     }
 
+    public int size() { return size; }
+
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new File("src/input.txt"));
+        Scanner scanner = new Scanner(new File("resource/input.txt"));
         int N = scanner.nextInt();
         WeightedQU wUF = new WeightedQU(N);
 
-        while(scanner.hasNext()){
+        while (scanner.hasNext()) {
             int p = scanner.nextInt();
             int q = scanner.nextInt();
-            if (!wUF.connected(p,q)) {
-                wUF.union(p,q);
+
+            int need = Math.max(p, q);
+            wUF.growToInclude(need); 
+
+            if (!wUF.connected(p, q)) {
+                wUF.union(p, q);
                 System.out.println(p + " " + q);
             }
         }

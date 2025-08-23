@@ -43,15 +43,15 @@ The heap operations (insert and remove) are logarithmic (O(log M)).
 While maintaining the heap's order incurs some overhead, it significantly improves the efficiency of retrieving 
 the largest (or smallest) elements.
 
-![img_18.png](img_18.png)
+![img_18.png](PriorityQueue/img_18.png)
 
 ## API
 
-![img_19.png](img_19.png)
+![img_19.png](PriorityQueue/img_19.png)
 
 ## Use cases
 
-![img_20.png](img_20.png)
+![img_20.png](PriorityQueue/img_20.png)
 
 # 2. Binary Heap
 

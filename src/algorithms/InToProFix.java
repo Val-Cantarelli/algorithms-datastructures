@@ -15,17 +15,19 @@ stack.push(operador)
 Depois de terminar, se ainda houver operadores na pilha, eu concateno na expression
 */
 
+import edu.princeton.cs.algs4.StdDraw;
 import java.util.Stack;
 public class InToProFix {
     public static String postFix(String inFix) {
         String postFixExpr = "";
+        
         Stack<String> operatorsStack = new Stack<>();
         String[] arr = inFix.split(" ");
 
         for (int i = 0; i < arr.length; i++) {
-            String elem = arr[i]; // Define elem corretamente
+            String elem = arr[i]; // DDefine elem correctly
 
-            if (elem.matches("\\d+")) { // Verifica se é um número
+            if (elem.matches("\\d+")) { // Is it a number?
                 postFixExpr += elem + " ";
             } else {
                 while (!operatorsStack.empty() && precedenceOperator(elem.charAt(0)) <= precedenceOperator(operatorsStack.peek().charAt(0))) {
@@ -34,7 +36,7 @@ public class InToProFix {
                 operatorsStack.push(elem);
             }
         }
-        // Desempilha operadores restantes
+        // Pop all the operators from the stack
         while (!operatorsStack.isEmpty()) {
             postFixExpr += operatorsStack.pop() + " ";
         }
@@ -49,10 +51,8 @@ public class InToProFix {
         return 0;
     }
 
-
     public static void main(String[] args) {
         String infix = "1 + 2 * 3 - 1 / 3";
         System.out.println(postFix(infix));
-
     }
 }

@@ -1,4 +1,4 @@
-package AlgsPart1.priorityQueue;
+package AlgsPart1;
 import java.util.NoSuchElementException;
 
 public class BinaryHeap<Key extends Comparable<Key>>  {

@@ -7,4 +7,53 @@ requires 10 machine instructions.
 Total = input pairs x N (sites) x 10(machine instructions) / CPU(10⁹)
 
 Total = 10⁶ * (10⁹ * 10) / 10⁹ = 10⁷/ 60 * 60 * 24
-Toal = 115 days
+Total = 115 days
+
+
+2. Which of the following input array property is the most effective when using 3-way partitioning with quicksort?
+Few distinct keys.
+
+3. Which statement best describes the advantage of using three-way partitioning in Quicksort when dealing with large
+numbers of duplicate keys?
+Three-way partitioning divides the array into three parts: less than, equal to, and greater than the partitioning
+element. This approach minimizes comparisons and achieves entropy optimality, making it efficient for sorting arrays
+with many duplicate keys.
+
+4.Discuss the theoretical significance and practical limitations of the linear time selection algorithm discovered
+in 1973. How does this compare to the practical use of the Quickselect method based on Quicksort partitioning in terms
+ of average and worst-case performance?
+
+ Median of Medians(1973) offers a guarantee that the complexity will be O(n) - linear. However, it is slower because
+it spends extra time searching for an appropriate pivot. On the other hand, Quickselect does not offer such a
+guarantee, and its worst-case scenario is quadratic O(n^2), but the chances of occurrence are very low. On average,
+it has expected O(n) - linear.
+
+5.Explain how the partitioning process in the quicksort algorithm works and why it is crucial for the algorithm's
+efficiency.
+Partitioning is powerful because, although it does not sort the array immediately, it guarantees the invariant that
+all elements smaller than the pivot are on the left and all larger elements are on the right. This already places the
+pivot in its final position and divides the problem into two smaller subproblems. Each partition will costs O(n), and
+ since the recursion has logarithmic height, the expected total cost is 𝑂( 𝑛 log 𝑛).
+
+6. What is the expected running time of randomized quicksort to sort an array of n distinct keys when the array is
+ already sorted? Linear-logarithm O(n log n).
+
+7.Discuss the reasoning behind using both quicksort and mergesort in Java's Arrays.sort method. Why does the choice of
+algorithm depend on the data type being sorted, and what are the implications of this decision in terms of performance
+and memory usage?
+
+In Java Array.sort the QuickSort is used for primitives because it’s fast and in-place, and primitives don’t carry
+extra information—swapping two identical integers doesn’t affect anything. For objects, MergeSort is used because it’s
+stable: it preserves the relative order of equal elements (e.g., two people aged 35 will remain in the order they
+appeared).
+
+The trade-off is that MergeSort is slightly slower and uses extra memory for a temporary array during merging and also
+offers a guarantee of O(n log n) performance, while QuickSort can degrade to O(n^2) in the worst case but is generally
+ faster.
+
+ 8. Why does Arrays.sort() in Java use mergesort instead of quicksort when sorting reference types ?
+Stability and guaranteed n log n performance.
+
+
+
+9.
