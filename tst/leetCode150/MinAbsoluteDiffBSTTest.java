@@ -1,6 +1,9 @@
 package leetCode150;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import leetCode.MinAbsoluteDiffBST;
+import leetCode.SameTree;
 import org.junit.jupiter.api.Test;
 
 public class MinAbsoluteDiffBSTTest {

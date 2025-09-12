@@ -1,6 +1,8 @@
 package interviewsPreparation;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import leetCode.MaxSwap;
 import org.junit.jupiter.api.Test;
 public class MaxSwapTest {
 

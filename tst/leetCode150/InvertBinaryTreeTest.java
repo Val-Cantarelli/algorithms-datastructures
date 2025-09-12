@@ -1,9 +1,9 @@
 package leetCode150;
 
-import interviewsPreparation.TreeNode;
+import leetCode.SameTree;
 import org.junit.jupiter.api.Test;
 
-import static leetCode150.InvertBinaryTree.invertTree;
+import static leetCode.InvertBinaryTree.invertTree;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class InvertBinaryTreeTest {

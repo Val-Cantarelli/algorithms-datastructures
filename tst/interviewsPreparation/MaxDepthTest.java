@@ -1,4 +1,6 @@
 package interviewsPreparation;
+import leetCode.MaxDepth;
+import leetCode.TreeNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
