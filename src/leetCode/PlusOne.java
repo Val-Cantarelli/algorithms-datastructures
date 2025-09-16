@@ -12,28 +12,34 @@ package leetCode;
  *   of rewriting is acceptable when it happens.
  */
 
+import java.util.Arrays;
+
 public class PlusOne {
 
     public int [] add(int [] arr){
-        int carry = 0;
-        int[] array = new int [arr.length];
 
-        for (int i = arr.length; i >= 0 ; i--) {
+        int carry = 1;
+        for (int i = arr.length-1; carry != 0 && i >= 0 ; i--) {
             if(arr[i] == 9) {
                 arr[i] = 0;
-                carry++;
             }
-
+            else{
+                arr[i] = arr[i]+1;
+                carry--;
+            }
         }
-
-
-
-        return array;
+        if(carry !=0){
+            int []arrayAlt = new int[arr.length+1];
+            arrayAlt[0]= 1;
+            return arrayAlt;
+        }
+        return arr;
     }
 
     public static void main(String[] args) {
-        int[] number = {1,2,4};
-        int [] result = new PlusOne().add(number);
-        for (int elem:result) {System.out.print(elem);}
+        int[] number = {9,9,9,9};
+        PlusOne result = new PlusOne();
+        int[] resultArray = result.add(number);
+        System.out.println(Arrays.toString(resultArray));
     }
 }
