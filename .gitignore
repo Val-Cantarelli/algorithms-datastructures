@@ -5,5 +5,9 @@ out/
 .idea/
 
 lib
+
 .DS_Store
+
 algorithms.iml
+
+target/

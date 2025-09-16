@@ -88,7 +88,7 @@ public class TreeChecker {
 
         // Terminado de add nodes, confere se todos nodes compartilham mesma root
         Optional<TreeNode> first = nodeMap.values().stream().findFirst();
-        if(first.isEmpty()) return true;
+        if(!first.isPresent()) return true;
         TreeNode rootCandidate = first.get().findRoot();
 
         for (TreeNode node: nodeMap.values()){
@@ -112,4 +112,3 @@ public class TreeChecker {
         System.out.println(answer);
     }
 }
-

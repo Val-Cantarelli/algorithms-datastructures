@@ -1,7 +1,6 @@
-package interviewsPreparation;
+package leetCode;
 import static org.junit.jupiter.api.Assertions.*;
 
-import leetCode.TwoSum;
 import org.junit.jupiter.api.Test;
 
 public class TwoSumTest {

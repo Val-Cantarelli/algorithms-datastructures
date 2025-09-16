@@ -1,11 +1,13 @@
-package leetCode150;
+package leetCode;
 
 import leetCode.AveregeLevelTree;
 import leetCode.SameTree;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 public class AveregeLevelTreeTest {
 
@@ -20,7 +22,7 @@ public class AveregeLevelTreeTest {
         AveregeLevelTree solution = new AveregeLevelTree();
         List<Double> result = solution.averageOfLevels(root);
 
-        List<Double> expected = List.of(3.0, 14.5, 11.0);
+        List<Double> expected = Arrays.asList(3.0, 14.5, 11.0);
 
         assertEquals(expected.size(), result.size(), "Levels number incorrect");
 

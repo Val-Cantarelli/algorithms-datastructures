@@ -1,4 +1,4 @@
-package leetCode150;
+package leetCode;
 
 import leetCode.PathSum;
 import leetCode.SameTree;

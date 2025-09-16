@@ -1,12 +1,18 @@
-package leetCode150;
+package leetCode;
 
-import leetCode.IsValidaStr;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class IsValidaStrTest {
 
     IsValidaStr test = new IsValidaStr();
+
+    // Helper for Java < 11
+    private static String repeat(String s, int times) {
+        StringBuilder sb = new StringBuilder(s.length() * times);
+        for (int i = 0; i < times; i++) sb.append(s);
+        return sb.toString();
+    }
 
     @Test
     public void testValidSimplePairs() {
@@ -45,13 +51,13 @@ public class IsValidaStrTest {
 
     @Test
     public void testLongValidString() {
-        String longValid = "({[]})".repeat(1000); // 6000 caracteres válidos
+        String longValid = repeat("({[]})", 1000); // 6000 caracteres válidos
         assertTrue(test.isValid(longValid));
     }
 
     @Test
     public void testLongInvalidString() {
-        String longInvalid = "({[})]".repeat(1000); // estrutura incorreta repetida
+        String longInvalid = repeat("({[})]", 1000); // estrutura incorreta repetida
         assertFalse(test.isValid(longInvalid));
     }
 }

@@ -1,7 +1,5 @@
-package leetCode150;
+package leetCode;
 
-import leetCode.SameTree;
-import leetCode.SymmetricTree;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

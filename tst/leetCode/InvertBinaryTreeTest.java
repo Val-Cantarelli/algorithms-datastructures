@@ -1,6 +1,5 @@
-package leetCode150;
+package leetCode;
 
-import leetCode.SameTree;
 import org.junit.jupiter.api.Test;
 
 import static leetCode.InvertBinaryTree.invertTree;

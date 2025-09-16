@@ -1,4 +1,4 @@
-package AlgsPart1.priorityQueue;
+package algs1;
 
 import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Test;

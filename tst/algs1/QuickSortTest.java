@@ -1,4 +1,4 @@
-package algorithms.sorting;
+package algs1;
 import algs1.sorting.QuickSort;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

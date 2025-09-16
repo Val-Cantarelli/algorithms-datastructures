@@ -1,8 +1,7 @@
-package leetCode150;
+package leetCode;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import leetCode.MaxDepthTree;
 import org.junit.jupiter.api.Test;
 
 public class MaxDepthTreeTest {

@@ -1,6 +1,5 @@
-package interviewsPreparation;
+package leetCode;
 
-import leetCode.ListNode;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
