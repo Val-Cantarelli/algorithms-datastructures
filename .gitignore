@@ -1,13 +1,16 @@
-### IntelliJ IDEA ###
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+# IntelliJ IDEA
 .idea/
+*.iml
 
-lib
+# Build output
+out/
+target/
 
+# External libraries
+lib/
+
+# macOS
 .DS_Store
 
-algorithms.iml
-
-target/
+# extra
+qodana.yaml
