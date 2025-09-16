@@ -3,6 +3,11 @@ package algs1.trees;
 import edu.princeton.cs.algs4.*;
 import edu.princeton.cs.algs4.StdIn;
 import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class BinarySearch {
 
@@ -21,7 +26,16 @@ public class BinarySearch {
     }
 
     public static void main(String[] args) {
-        int[] whitelist = In.readInts(args[0]);
+        List<Integer> whitelistList = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(args[0]))) {
+            while (scanner.hasNextInt()) {
+                whitelistList.add(scanner.nextInt());
+            }
+        } catch (FileNotFoundException e) {
+            System.err.println("File not found: " + args[0]);
+            return;
+        }
+        int[] whitelist = whitelistList.stream().mapToInt(i -> i).toArray();
         Arrays.sort(whitelist);
 
         while(!StdIn.isEmpty()){
