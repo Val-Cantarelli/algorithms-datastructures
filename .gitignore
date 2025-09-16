@@ -11,6 +11,3 @@ lib/
 
 # macOS
 .DS_Store
-
-# extra
-qodana.yaml
