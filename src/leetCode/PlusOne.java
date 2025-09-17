@@ -18,7 +18,7 @@ public class PlusOne {
 
     public int [] add(int [] arr){
 
-        int carry = 1;
+        int carry = 1; // magic number
         for (int i = arr.length-1; carry != 0 && i >= 0 ; i--) {
             if(arr[i] == 9) {
                 arr[i] = 0;
@@ -37,7 +37,7 @@ public class PlusOne {
     }
 
     public static void main(String[] args) {
-        int[] number = {9,9,9,9};
+        int[] number = {3,4,5};
         PlusOne result = new PlusOne();
         int[] resultArray = result.add(number);
         System.out.println(Arrays.toString(resultArray));
