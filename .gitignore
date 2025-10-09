@@ -2,12 +2,20 @@
 .idea/
 *.iml
 
+# Gradle
+.gradle/
+
 # Build output
 out/
 target/
+build/
 
 # External libraries
 lib/
 
 # macOS
 .DS_Store
+
+# cache files
+build/reports/
+buildOutputCleanup/
